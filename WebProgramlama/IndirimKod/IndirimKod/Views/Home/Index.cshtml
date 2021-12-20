@@ -1,0 +1,17 @@
+﻿@model IEnumerable<IndirimKod.Models.IndirimlerModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Indirim Listesi</h2>
+
+@Html.Partial("IndirimlerListesi", Model)
+
+@section SagKolon{
+    @Html.Partial("Search")
+
+    @{Html.RenderAction("KategoriListesi", "Kategori");}
+
+}
+
+
