@@ -31,10 +31,6 @@ namespace IndirimKuponum.Controllers
                 }
            ).AsQueryable();
 
-            if (string.IsNullOrEmpty("AnahtarKelime") == false)
-            {
-                Indirim = Indirim.Where(i => i.Baslik.Contains(AnahtarKelime) || i.Aciklama.Contains(AnahtarKelime));
-            }
 
 
             if (id != null)
@@ -42,6 +38,34 @@ namespace IndirimKuponum.Controllers
                 Indirim = Indirim.Where(i => i.KategoriId == id);
             }
             return View(Indirim.ToList());
+
+
+        }
+
+        public ActionResult ListArama(int? id, string AnahtarKelime)
+        {
+            var Indirim = db.Indirim
+                .Where(i => i.Onay == true)
+                .Select(i => new IndirimlerModel()
+                {
+                    Id = i.Id,
+                    Baslik = i.Baslik.Length > 100 ? i.Baslik.Substring(0, 100) + "..." : i.Baslik,
+                    Aciklama = i.Aciklama,
+                    EklenmeTarihi = i.EklenmeTarihi,
+                    Anasayfa = i.Anasayfa,
+                    Onay = i.Onay,
+                    Resim = i.Resim,
+                    KategoriId = i.KategoriId
+                }
+           ).AsQueryable();
+
+            if (string.IsNullOrEmpty("AnahtarKelime") == false)
+            {
+                Indirim = Indirim.Where(i => i.Baslik.Contains(AnahtarKelime) || i.Aciklama.Contains(AnahtarKelime));
+            }
+
+            return View(Indirim.ToList());
+
         }
 
         private readonly ApplicationDbContext _context;
@@ -99,9 +123,10 @@ namespace IndirimKuponum.Controllers
 
                 db.Indirim.Add(indirimler);
                 db.SaveChanges();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index"); 
             }
-            ViewData["KategoriId"] = new SelectList(_context.Kategori, "Id", "Id", indirimler.KategoriId);
+
+            ViewBag.KategoriId = new SelectList(db.Kategoriler, "Id", "KategoriAdi", indirimler.KategoriId);
             return View(indirimler);
         }
 
@@ -165,9 +190,7 @@ namespace IndirimKuponum.Controllers
                 return NotFound();
             }
 
-            var indirimler = await _context.Indirimler
-                .Include(i => i.Kategori)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            Indirimler indirimler = db.Indirim.Find(id);
             if (indirimler == null)
             {
                 return NotFound();
@@ -181,10 +204,10 @@ namespace IndirimKuponum.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var indirimler = await _context.Indirimler.FindAsync(id);
-            _context.Indirimler.Remove(indirimler);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            Indirimler indirimler = db.Indirim.Find(id);
+            db.Indirim.Remove(indirimler);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         private bool IndirimlerExists(int id)

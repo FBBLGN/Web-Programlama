@@ -15,12 +15,8 @@ namespace IndirimKuponum.Controllers
         private IndirimlerContext db = new IndirimlerContext();
 
         private readonly ApplicationDbContext _context;
-        public PartialViewResult KategoriListesi()
-        {
 
-            return PartialView(db.Kategoriler.ToList());
 
-        }
         public KategoriController(ApplicationDbContext context)
         {
             _context = context;
@@ -49,8 +45,7 @@ namespace IndirimKuponum.Controllers
                 return NotFound();
             }
 
-            var kategori = await _context.Kategori
-                .FirstOrDefaultAsync(m => m.Id == id);
+            Kategori kategori = db.Kategoriler.Find(id);
             if (kategori == null)
             {
                 return NotFound();
@@ -102,20 +97,22 @@ namespace IndirimKuponum.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,KategoriAdi")] Kategori kategori)
+        public async Task<IActionResult> Edit([Bind("Id,KategoriAdi")] Kategori kategori)
         {
-            if (id != kategori.Id)
-            {
-                return NotFound();
-            }
-
+           
             if (ModelState.IsValid)
             {
-                db.Entry(kategori).State = (System.Data.Entity.EntityState)EntityState.Modified;
-                db.SaveChanges();
+                var entity = db.Kategoriler.Find(kategori.Id);
+                if (entity != null)
+                {
+                    entity.Id = kategori.Id;
+                    entity.KategoriAdi = kategori.KategoriAdi;
 
-                
-                return RedirectToAction("Index");
+                    db.SaveChanges();
+
+
+                    return RedirectToAction("Index");
+                }
             }
             return View(kategori);
         }
@@ -128,8 +125,7 @@ namespace IndirimKuponum.Controllers
                 return NotFound();
             }
 
-            var kategori = await _context.Kategori
-                .FirstOrDefaultAsync(m => m.Id == id);
+            Kategori kategori = db.Kategoriler.Find(id);
             if (kategori == null)
             {
                 return NotFound();
@@ -143,10 +139,10 @@ namespace IndirimKuponum.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var kategori = await _context.Kategori.FindAsync(id);
-            _context.Kategori.Remove(kategori);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            Kategori kategori = db.Kategoriler.Find(id);
+            db.Kategoriler.Remove(kategori);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         private bool KategoriExists(int id)

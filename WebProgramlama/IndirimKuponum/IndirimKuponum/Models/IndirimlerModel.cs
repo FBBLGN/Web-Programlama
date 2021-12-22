@@ -17,5 +17,7 @@ namespace IndirimKuponum.Models
 
         public int KategoriId { get; set; }
 
+
+
     }
 }

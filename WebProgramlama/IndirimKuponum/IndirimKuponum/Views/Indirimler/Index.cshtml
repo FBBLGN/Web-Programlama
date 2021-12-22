@@ -16,9 +16,6 @@
 <table class="table table-bordered table-hover table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Kategori.KategoriAdi)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Baslik)
         </th>
         <th>
@@ -39,9 +36,6 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Kategori.KategoriAdi)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Baslik)
             </td>
@@ -79,3 +73,4 @@
     }
 
 </table>
+

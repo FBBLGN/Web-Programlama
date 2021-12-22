@@ -455,7 +455,9 @@ C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Vi
 C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Views\Indirimler\Details.cshtml.g.cs
 C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Views\Indirimler\Edit.cshtml.g.cs
 C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Views\Indirimler\Index.cshtml.g.cs
-C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Views\Kategori\KategoriListesi.cshtml.g.cs
-C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Views\Indirimler\List.cshtml.g.cs
 C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Views\Shared\IndirimlerListesi.cshtml.g.cs
 C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Views\Shared\Search.cshtml.g.cs
+C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Views\Indirimler\List.cshtml.g.cs
+C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Views\Indirimler\ListArama.cshtml.g.cs
+C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Views\Anasayfa\Index.cshtml.g.cs
+C:\Users\HP\source\repos\IndirimKuponum\IndirimKuponum\obj\Debug\net5.0\Razor\Views\Shared\SearchNavbar.cshtml.g.cs
