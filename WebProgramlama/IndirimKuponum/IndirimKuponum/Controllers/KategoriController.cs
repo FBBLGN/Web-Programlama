@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IndirimKuponum.Data;
 using IndirimKuponum.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IndirimKuponum.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class KategoriController : Controller
     {
         private IndirimlerContext db = new IndirimlerContext();

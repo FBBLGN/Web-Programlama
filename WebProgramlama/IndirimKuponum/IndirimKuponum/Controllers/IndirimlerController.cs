@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IndirimKuponum.Data;
 using IndirimKuponum.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IndirimKuponum.Controllers
 {
@@ -14,6 +15,7 @@ namespace IndirimKuponum.Controllers
     {
         private IndirimlerContext db = new IndirimlerContext();
 
+        [Authorize]
         public ActionResult List(int? id, string AnahtarKelime)
         {
             var Indirim = db.Indirim
@@ -76,6 +78,7 @@ namespace IndirimKuponum.Controllers
         }
 
         // GET: Indirimler
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var indirim = db.Indirim.Include(i => i.Kategori).OrderByDescending(i => i.EklenmeTarihi);
@@ -85,6 +88,7 @@ namespace IndirimKuponum.Controllers
         }
 
         // GET: Indirimler/Details/5
+      
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -100,7 +104,7 @@ namespace IndirimKuponum.Controllers
 
             return View(indirimler);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Indirimler/Create
         public IActionResult Create()
         {
@@ -131,6 +135,7 @@ namespace IndirimKuponum.Controllers
         }
 
         // GET: Indirimler/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -151,6 +156,7 @@ namespace IndirimKuponum.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Baslik,Resim,Aciklama,Icerik,Onay,Anasayfa,KategoriId")] Indirimler indirimler)
         {
             if (id != indirimler.Id)
@@ -183,6 +189,7 @@ namespace IndirimKuponum.Controllers
         }
 
         // GET: Indirimler/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
