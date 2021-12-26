@@ -29,12 +29,12 @@
             <form asp-action="YorumEkle">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group" >
-                    <label asp-for="@Model.Yorum.KullaniciAdi" class="control-label" ></label>
+                    <label asp-for="@Model.Yorum.KullaniciAdi" class="control-label" >Kullanıcı Adı</label>
                     <input asp-for="@Model.Yorum.KullaniciAdi" class="form-control" style="width:300px;height:50px;" />
                     <span asp-validation-for="@Model.Yorum.KullaniciAdi" class="text-danger"></span>
                 </div>
                 <div class="form-group" >
-                    <label asp-for="@Model.Yorum.YorumText" class="control-label"></label>
+                    <label asp-for="@Model.Yorum.YorumText" class="control-label">Yorumunuz</label>
                     <input asp-for="@Model.Yorum.YorumText" class="form-control" style="width:700px;height:150px;" />
                     <span asp-validation-for="@Model.Yorum.YorumText" class="text-danger"></span>
                 </div>
