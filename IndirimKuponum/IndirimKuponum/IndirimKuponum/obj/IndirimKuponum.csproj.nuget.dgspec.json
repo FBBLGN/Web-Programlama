@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Downloads\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum.csproj": {}
+    "C:\\Users\\HP\\Documents\\GitHub\\Web-Programlama\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Downloads\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum.csproj": {
+    "C:\\Users\\HP\\Documents\\GitHub\\Web-Programlama\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Downloads\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\Web-Programlama\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum.csproj",
         "projectName": "IndirimKuponum",
-        "projectPath": "C:\\Users\\HP\\Downloads\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum.csproj",
+        "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\Web-Programlama\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Downloads\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\Web-Programlama\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

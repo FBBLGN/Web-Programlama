@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bbE+EVCFIG2dMMHu7xzyA9e3xAsITZfwi297EHcMYv9xk0YWQDqWCbqlS4TD0Q1hQNnN/tHUAtg/jlGAWNLa7A==",
+  "dgSpecHash": "t/8CmwhSFQTZGCoD2suah9kKta090qpxzzzubeyvM7MJJIwlFArYrZNodZfRW+0326bpAqnxMErCBHwDkXoFQg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Downloads\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Documents\\GitHub\\Web-Programlama\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum\\IndirimKuponum.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\bootstrap\\5.1.2\\bootstrap.5.1.2.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
